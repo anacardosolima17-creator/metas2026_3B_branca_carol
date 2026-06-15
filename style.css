@@ -1,122 +1,75 @@
-:root {
-    --cor-de-fundo: #CB7EFC;
-    --grifar: #FC7EC0;
-    --branco: #ffffff;
-    --botao-ativo: #F12BFF;
-    --botao-inativo: #804FFF;
-    --texto-fundo: #000000;
-}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Metas 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body {
-    background-color: var(--cor-de-fundo);
-    color: var(--branco);
-    font-family: 'Times New Roman', Times, serif;
-}
+    <section class="conteudo-principal">
+        <h2 class="titulo-principal">Objetivos<span>_</span></h2>
 
-.conteudo-principal {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-}
+        <div class="conteudo">
+            <div class="botoes">
+                <button class="botao-ativo">Terminar o universo do RPG</button>
+                <button class="botao">Aprender novas receitas</button>
+                <button class="botao">Começar a investir</button>
+                <button class="botao">Montar um PC</button>
+            </div>
 
-.titulo-principal {
-    text-align: left;
-    width: 100%;
-    font-size: 32px;
-}
+            <div class="abas-textos">
 
-.botoes {
-    display: flex;
-}
+                <div class="aba-conteudo aba-conteudo-ativo">
+                    <h3 class="aba-conteudo-titulo-principal">Terminar o universo do RPG</h3>
+                    <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
 
-.botao {
-    font-family: 'Times New Roman', Times, serif;
-    background-color: var(--botao-inativo);
-    color: var(--branco);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1em;
-    width: 100%;
-    font-size: 18px;
-    border: none;
-    border-bottom: 4px solid var(--botao-ativo);
-    border-left: 2px solid var(--botao-ativo);
-    border-right: 2px solid var(--botao-ativo);
-    cursor: pointer;
-}
+                    <div class="contador">
+                        <div class="contador-digito">
+                            <p class="contador-digito-numero" id="dias0">7</p>
+                            <p class="contador-digito-texto">dias</p>
+                        </div>
+                        <div class="contador-digito">
+                            <p class="contador-digito-numero" id="horas0">7</p>
+                            <p class="contador-digito-texto">horas</p>
+                        </div>
+                        <div class="contador-digito">
+                            <p class="contador-digito-numero" id="min0">7</p>
+                            <p class="contador-digito-texto">min</p>
+                        </div>
+                        <div class="contador-digito">
+                            <p class="contador-digito-numero" id="seg0">7</p>
+                            <p class="contador-digito-texto">seg</p>
+                        </div>
+                    </div>
+                </div>
 
-.botao:first-child {
-    border-radius: 40px 40px 0 0;
-}
+                <div class="aba-conteudo">
+                    <h3 class="aba-conteudo-titulo-principal">Aprender novas receitas</h3>
+                    <h4 class="aba-conteudo-titulo-secundario">
+                        Aprender novas receitas e criar um caderninho com elas
+                    </h4>
+                </div>
 
-.botao.ativo {
-    background-color: var(--botao-ativo);
-    border-bottom: 4px solid var(--grifar);
-}
+                <div class="aba-conteudo">
+                    <h3 class="aba-conteudo-titulo-principal">Começar a investir</h3>
+                    <h4 class="aba-conteudo-titulo-secundario">
+                        Começar a investir e guardar dinheiro
+                    </h4>
+                </div>
 
-.abas-textos {
-    background-color: var(--texto-fundo);
-    padding: 40px;
-    border-radius: 0 0 40px 40px;
-}
+                <div class="aba-conteudo">
+                    <h3 class="aba-conteudo-titulo-principal">Montar um PC</h3>
+                    <h4 class="aba-conteudo-titulo-secundario">
+                        Montar um bom PC para jogos
+                    </h4>
+                </div>
 
-.aba-conteudo {
-    display: none;
-}
+            </div>
+        </div>
+    </section>
 
-.aba-conteudo.ativo {
-    display: block;
-}
-
-.aba-conteudo-titulo-principal {
-    font-size: 28px;
-    text-align: center;
-}
-
-.aba-conteudo-titulo-secundario {
-    text-align: center;
-    color: var(--grifar);
-    text-transform: uppercase;
-}
-
-.contador {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-.contador-digito {
-    padding: 0 16px;
-    text-align: center;
-    min-width: 100px;
-}
-
-.contador-digito-numero {
-    font-size: 80px;
-    margin: 0;
-}
-
-.contador-digito-texto {
-    color: var(--grifar);
-    font-size: 20px;
-    margin: 0;
-}
-
-@media screen and (min-width: 768px) {
-    .botao {
-        display: flex;
-    }
-
-    .botao:first-child {
-        border-radius: 40px 0 0 0;
-    }
-
-    .botao:last-child {
-        border-radius: 0 40px 0 0;
-    }
-}
+    <script src="main.js"></script>
+</body>
+</html>

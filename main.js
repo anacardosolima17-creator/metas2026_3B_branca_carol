@@ -1,90 +1,144 @@
-const botoes = document.querySelectorAll(".botao");
-const textos = document.querySelectorAll(".aba-conteudo");
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Metas 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-for (let i = 0; i < botoes.length; i++) {
-    botoes[i].onclick = function () {
+    <section class="conteudo-principal">
+        <h2 class="titulo-principal">Objetivos<span>_</span></h2>
 
-        for (let j = 0; j < botoes.length; j++) {
-            botoes[j].classList.remove("ativo");
-            textos[j].classList.remove("ativo");
-        }
+        <div class="conteudo">
+            <div class="botoes">
+                <button class="botao-ativo">Terminar o universo do RPG</button>
+                <button class="botao">Aprender novas receitas</button>
+                <button class="botao">Começar a investir</button>
+                <button class="botao">Montar um PC</button>
+            </div>
 
-        botoes[i].classList.add("ativo");
-        textos[i].classList.add("ativo");
-    };
-}
+            <div class="abas-textos">
 
-const contadores = document.querySelectorAll(".conta");
+                <div class="aba-conteudo aba-conteudo-ativo">
+                    <h3 class="aba-conteudo-titulo-principal">Terminar o universo do RPG</h3>
+                    <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
 
-const tempoObjetivo1 = new Date("2027-01-20T00:00:00");
-const tempoObjetivo2 = new Date("2026-09-14T00:00:00");
-const tempoObjetivo3 = new Date("2026-12-10T00:00:00");
-const tempoObjetivo4 = new Date("2027-01-10T00:00:00");
+                    <div class="contador">
+                        <div class="contador-digito">
+                            <p class="contador-digito-numero" id="dias0">7</p>
+                            <p class="contador-digito-texto">dias</p>
+                        </div>
 
-const tempos = [
-    tempoObjetivo1,
-    tempoObjetivo2,
-    tempoObjetivo3,
-    tempoObjetivo4
-];
+                        <div class="contador-digito">
+                            <p class="contador-digito-numero" id="horas0">7</p>
+                            <p class="contador-digito-texto">horas</p>
+                        </div>
 
-function calculaTempo(tempoObjetivo) {
-    let tempoAtual = new Date();
-    let tempoFinal = tempoObjetivo - tempoAtual;
+                        <div class="contador-digito">
+                            <p class="contador-digito-numero" id="min0">7</p>
+                            <p class="contador-digito-texto">min</p>
+                        </div>
 
-    let segundos = Math.floor(tempoFinal / 1000);
-    let minutos = Math.floor(segundos / 60);
-    let horas = Math.floor(minutos / 60);
-    let dias = Math.floor(horas / 24);
+                        <div class="contador-digito">
+                            <p class="contador-digito-numero" id="seg0">7</p>
+                            <p class="contador-digito-texto">seg</p>
+                        </div>
+                    </div>
+                </div>
 
-    segundos %= 60;
-    minutos %= 60;
-    horas %= 24;
+                <div class="aba-conteudo">
+                    <h3 class="aba-conteudo-titulo-principal">Aprender novas receitas</h3>
+                    <h4 class="aba-conteudo-titulo-secundario">
+                        Aprender novas receitas e criar um caderninho com elas
+                    </h4>
 
-    if (tempoFinal > 0) {
-        return dias + " dias " +
-               horas + " horas " +
-               minutos + " minutos " +
-               segundos + " segundos";
-    } else {
-        return "Prazo Finalizado";
-    }
-}
+                    <div class="contador">
+                        <div class="contador-digito">
+                            <p class="contador-digito-numero" id="dias1">7</p>
+                            <p class="contador-digito-texto">dias</p>
+                        </div>
 
-function atualizaCronometro() {
+                        <div class="contador-digito">
+                            <p class="contador-digito-numero" id="horas1">7</p>
+                            <p class="contador-digito-texto">horas</p>
+                        </div>
 
-    for (let i = 0; i < tempos.length; i++) {
+                        <div class="contador-digito">
+                            <p class="contador-digito-numero" id="min1">7</p>
+                            <p class="contador-digito-texto">min</p>
+                        </div>
 
-        let tempoAtual = new Date();
-        let tempoFinal = tempos[i] - tempoAtual;
+                        <div class="contador-digito">
+                            <p class="contador-digito-numero" id="seg1">7</p>
+                            <p class="contador-digito-texto">seg</p>
+                        </div>
+                    </div>
+                </div>
 
-        let segundos = Math.floor(tempoFinal / 1000);
-        let minutos = Math.floor(segundos / 60);
-        let horas = Math.floor(minutos / 60);
-        let dias = Math.floor(horas / 24);
+                <div class="aba-conteudo">
+                    <h3 class="aba-conteudo-titulo-principal">Começar a investir</h3>
+                    <h4 class="aba-conteudo-titulo-secundario">
+                        Começar a investir e guardar dinheiro
+                    </h4>
 
-        segundos %= 60;
-        minutos %= 60;
-        horas %= 24;
+                    <div class="contador">
+                        <div class="contador-digito">
+                            <p class="contador-digito-numero" id="dias2">7</p>
+                            <p class="contador-digito-texto">dias</p>
+                        </div>
 
-        if (tempoFinal > 0) {
-            document.getElementById(`dias${i}`).textContent = dias;
-            document.getElementById(`horas${i}`).textContent = horas;
-            document.getElementById(`min${i}`).textContent = minutos;
-            document.getElementById(`seg${i}`).textContent = segundos;
-        } else {
-            document.getElementById(`dias${i}`).textContent = "0";
-            document.getElementById(`horas${i}`).textContent = "0";
-            document.getElementById(`min${i}`).textContent = "0";
-            document.getElementById(`seg${i}`).textContent = "0";
-        }
-    }
-}
+                        <div class="contador-digito">
+                            <p class="contador-digito-numero" id="horas2">7</p>
+                            <p class="contador-digito-texto">horas</p>
+                        </div>
 
-function comecaCronometro() {
-    atualizaCronometro();
-    setInterval(atualizaCronometro, 1000);
-}
+                        <div class="contador-digito">
+                            <p class="contador-digito-numero" id="min2">7</p>
+                            <p class="contador-digito-texto">min</p>
+                        </div>
 
-// Inicia o cronômetro
-comecaCronometro();
+                        <div class="contador-digito">
+                            <p class="contador-digito-numero" id="seg2">7</p>
+                            <p class="contador-digito-texto">seg</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="aba-conteudo">
+                    <h3 class="aba-conteudo-titulo-principal">Montar um PC</h3>
+                    <h4 class="aba-conteudo-titulo-secundario">
+                        Montar um bom PC para jogos
+                    </h4>
+
+                    <div class="contador">
+                        <div class="contador-digito">
+                            <p class="contador-digito-numero" id="dias3">7</p>
+                            <p class="contador-digito-texto">dias</p>
+                        </div>
+
+                        <div class="contador-digito">
+                            <p class="contador-digito-numero" id="horas3">7</p>
+                            <p class="contador-digito-texto">horas</p>
+                        </div>
+
+                        <div class="contador-digito">
+                            <p class="contador-digito-numero" id="min3">7</p>
+                            <p class="contador-digito-texto">min</p>
+                        </div>
+
+                        <div class="contador-digito">
+                            <p class="contador-digito-numero" id="seg3">7</p>
+                            <p class="contador-digito-texto">seg</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>
