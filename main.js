@@ -1,144 +1,28 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minhas Metas 2026</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+// Seleciona todos os botões e abas
+const botoes = document.querySelectorAll(".botao");
+const conteudos = document.querySelectorAll(".aba-conteudo");
 
-    <section class="conteudo-principal">
-        <h2 class="titulo-principal">Objetivos<span>_</span></h2>
+// Função para ativar uma aba
+function ativarAba(index) {
+    // Remove classe ativa de tudo
+    botoes.forEach(botao => {
+        botao.classList.remove("botao-ativo");
+    });
 
-        <div class="conteudo">
-            <div class="botoes">
-                <button class="botao-ativo">Terminar o universo do RPG</button>
-                <button class="botao">Aprender novas receitas</button>
-                <button class="botao">Começar a investir</button>
-                <button class="botao">Montar um PC</button>
-            </div>
+    conteudos.forEach(conteudo => {
+        conteudo.classList.remove("aba-conteudo-ativo");
+    });
 
-            <div class="abas-textos">
+    // Ativa o botão clicado
+    botoes[index].classList.add("botao-ativo");
 
-                <div class="aba-conteudo aba-conteudo-ativo">
-                    <h3 class="aba-conteudo-titulo-principal">Terminar o universo do RPG</h3>
-                    <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
+    // Mostra o conteúdo correspondente
+    conteudos[index].classList.add("aba-conteudo-ativo");
+}
 
-                    <div class="contador">
-                        <div class="contador-digito">
-                            <p class="contador-digito-numero" id="dias0">7</p>
-                            <p class="contador-digito-texto">dias</p>
-                        </div>
-
-                        <div class="contador-digito">
-                            <p class="contador-digito-numero" id="horas0">7</p>
-                            <p class="contador-digito-texto">horas</p>
-                        </div>
-
-                        <div class="contador-digito">
-                            <p class="contador-digito-numero" id="min0">7</p>
-                            <p class="contador-digito-texto">min</p>
-                        </div>
-
-                        <div class="contador-digito">
-                            <p class="contador-digito-numero" id="seg0">7</p>
-                            <p class="contador-digito-texto">seg</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="aba-conteudo">
-                    <h3 class="aba-conteudo-titulo-principal">Aprender novas receitas</h3>
-                    <h4 class="aba-conteudo-titulo-secundario">
-                        Aprender novas receitas e criar um caderninho com elas
-                    </h4>
-
-                    <div class="contador">
-                        <div class="contador-digito">
-                            <p class="contador-digito-numero" id="dias1">7</p>
-                            <p class="contador-digito-texto">dias</p>
-                        </div>
-
-                        <div class="contador-digito">
-                            <p class="contador-digito-numero" id="horas1">7</p>
-                            <p class="contador-digito-texto">horas</p>
-                        </div>
-
-                        <div class="contador-digito">
-                            <p class="contador-digito-numero" id="min1">7</p>
-                            <p class="contador-digito-texto">min</p>
-                        </div>
-
-                        <div class="contador-digito">
-                            <p class="contador-digito-numero" id="seg1">7</p>
-                            <p class="contador-digito-texto">seg</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="aba-conteudo">
-                    <h3 class="aba-conteudo-titulo-principal">Começar a investir</h3>
-                    <h4 class="aba-conteudo-titulo-secundario">
-                        Começar a investir e guardar dinheiro
-                    </h4>
-
-                    <div class="contador">
-                        <div class="contador-digito">
-                            <p class="contador-digito-numero" id="dias2">7</p>
-                            <p class="contador-digito-texto">dias</p>
-                        </div>
-
-                        <div class="contador-digito">
-                            <p class="contador-digito-numero" id="horas2">7</p>
-                            <p class="contador-digito-texto">horas</p>
-                        </div>
-
-                        <div class="contador-digito">
-                            <p class="contador-digito-numero" id="min2">7</p>
-                            <p class="contador-digito-texto">min</p>
-                        </div>
-
-                        <div class="contador-digito">
-                            <p class="contador-digito-numero" id="seg2">7</p>
-                            <p class="contador-digito-texto">seg</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="aba-conteudo">
-                    <h3 class="aba-conteudo-titulo-principal">Montar um PC</h3>
-                    <h4 class="aba-conteudo-titulo-secundario">
-                        Montar um bom PC para jogos
-                    </h4>
-
-                    <div class="contador">
-                        <div class="contador-digito">
-                            <p class="contador-digito-numero" id="dias3">7</p>
-                            <p class="contador-digito-texto">dias</p>
-                        </div>
-
-                        <div class="contador-digito">
-                            <p class="contador-digito-numero" id="horas3">7</p>
-                            <p class="contador-digito-texto">horas</p>
-                        </div>
-
-                        <div class="contador-digito">
-                            <p class="contador-digito-numero" id="min3">7</p>
-                            <p class="contador-digito-texto">min</p>
-                        </div>
-
-                        <div class="contador-digito">
-                            <p class="contador-digito-numero" id="seg3">7</p>
-                            <p class="contador-digito-texto">seg</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <script src="main.js"></script>
-</body>
-</html>
+// Adiciona evento de clique em cada botão
+botoes.forEach((botao, index) => {
+    botao.addEventListener("click", () => {
+        ativarAba(index);
+    });
+});

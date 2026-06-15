@@ -1,75 +1,106 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minhas Metas 2026</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-    <section class="conteudo-principal">
-        <h2 class="titulo-principal">Objetivos<span>_</span></h2>
+body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+}
 
-        <div class="conteudo">
-            <div class="botoes">
-                <button class="botao-ativo">Terminar o universo do RPG</button>
-                <button class="botao">Aprender novas receitas</button>
-                <button class="botao">Começar a investir</button>
-                <button class="botao">Montar um PC</button>
-            </div>
+.conteudo-principal {
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 20px;
+}
 
-            <div class="abas-textos">
+.titulo-principal {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
 
-                <div class="aba-conteudo aba-conteudo-ativo">
-                    <h3 class="aba-conteudo-titulo-principal">Terminar o universo do RPG</h3>
-                    <h4 class="aba-conteudo-titulo-secundario">Tempo para completar o objetivo</h4>
+.titulo-principal span {
+    color: #38bdf8;
+}
 
-                    <div class="contador">
-                        <div class="contador-digito">
-                            <p class="contador-digito-numero" id="dias0">7</p>
-                            <p class="contador-digito-texto">dias</p>
-                        </div>
-                        <div class="contador-digito">
-                            <p class="contador-digito-numero" id="horas0">7</p>
-                            <p class="contador-digito-texto">horas</p>
-                        </div>
-                        <div class="contador-digito">
-                            <p class="contador-digito-numero" id="min0">7</p>
-                            <p class="contador-digito-texto">min</p>
-                        </div>
-                        <div class="contador-digito">
-                            <p class="contador-digito-numero" id="seg0">7</p>
-                            <p class="contador-digito-texto">seg</p>
-                        </div>
-                    </div>
-                </div>
+/* BOTÕES */
+.botoes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 30px;
+}
 
-                <div class="aba-conteudo">
-                    <h3 class="aba-conteudo-titulo-principal">Aprender novas receitas</h3>
-                    <h4 class="aba-conteudo-titulo-secundario">
-                        Aprender novas receitas e criar um caderninho com elas
-                    </h4>
-                </div>
+.botoes button {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color: #1e293b;
+    color: #e2e8f0;
+    transition: 0.3s;
+}
 
-                <div class="aba-conteudo">
-                    <h3 class="aba-conteudo-titulo-principal">Começar a investir</h3>
-                    <h4 class="aba-conteudo-titulo-secundario">
-                        Começar a investir e guardar dinheiro
-                    </h4>
-                </div>
+.botoes button:hover {
+    background-color: #334155;
+}
 
-                <div class="aba-conteudo">
-                    <h3 class="aba-conteudo-titulo-principal">Montar um PC</h3>
-                    <h4 class="aba-conteudo-titulo-secundario">
-                        Montar um bom PC para jogos
-                    </h4>
-                </div>
+.botao-ativo {
+    background-color: #38bdf8;
+    color: #0f172a;
+    font-weight: bold;
+}
 
-            </div>
-        </div>
-    </section>
+/* ABAS */
+.abas-textos {
+    background-color: #1e293b;
+    padding: 20px;
+    border-radius: 10px;
+}
 
-    <script src="main.js"></script>
-</body>
-</html>
+.aba-conteudo {
+    display: none;
+}
+
+.aba-conteudo-ativo {
+    display: block;
+}
+
+.aba-conteudo-titulo-principal {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.aba-conteudo-titulo-secundario {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #94a3b8;
+}
+
+/* CONTADOR */
+.contador {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.contador-digito {
+    background-color: #0f172a;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.contador-digito-numero {
+    font-size: 22px;
+    font-weight: bold;
+    color: #38bdf8;
+}
+
+.contador-digito-texto {
+    font-size: 12px;
+    color: #94a3b8;
+}
